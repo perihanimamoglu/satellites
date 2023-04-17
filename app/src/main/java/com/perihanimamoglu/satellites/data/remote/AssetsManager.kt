@@ -30,7 +30,9 @@ class AssetsManager @Inject constructor(
     }
 
     fun fetchSatellitePositions(): SatellitePositionListResponse? {
-        val type = Types.newParameterizedType(SatellitePositionListResponse::class.java)
+        val type = Types.newParameterizedType(
+            SatellitePositionListResponse::class.java, SatellitePositionListResponse::class.java
+        )
         val adapter: JsonAdapter<SatellitePositionListResponse> = moshi.adapter(type)
         val data = context.assets.readFile(POSITIONS_FILE_NAME)
         return adapter.fromJson(data)

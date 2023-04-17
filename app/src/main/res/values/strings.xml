@@ -2,4 +2,5 @@
     <string name="app_name">satellites</string>
     <string name="active">Active</string>
     <string name="passive">Passive</string>
+    <string name="error_message">Bir sorun oluştu. Lütfen tekrar deneyiniz.</string>
 </resources>

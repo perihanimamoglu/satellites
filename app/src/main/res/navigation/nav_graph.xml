@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigationHost"
+    app:startDestination="@id/satellite_fragment">
+
+    <fragment
+        android:id="@+id/satellite_fragment"
+        android:name="com.perihanimamoglu.satellites.ui.satellites.SatelliteFragment"
+        tools:layout="@layout/fragment_satellites">
+
+        <action
+            android:id="@+id/action_satellite_fragment_to_satellite_detail_fragment"
+            app:destination="@id/satellite_detail_fragment">
+            <argument
+                android:name="satelliteDetail"
+                android:defaultValue="@null"
+                app:argType="com.perihanimamoglu.satellites.domain.satelliteDetail.data.SatelliteDetail"
+                app:nullable="true" />
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/satellite_detail_fragment"
+        android:name="com.perihanimamoglu.satellites.ui.satelliteDetail.SatelliteDetailFragment"
+        tools:layout="@layout/fragment_satellite_detail">
+
+        <argument
+            android:name="satelliteDetail"
+            android:defaultValue="@null"
+            app:argType="com.perihanimamoglu.satellites.domain.satelliteDetail.data.SatelliteDetail"
+            app:nullable="true" />
+
+    </fragment>
+
+</navigation>
